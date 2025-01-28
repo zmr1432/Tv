@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Merotube</title>
+<link rel="icon" href="icon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="icon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="icon/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="icon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="icon/favicon-48x48.png" sizes="48x48" type="image/png">
+<link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/videojs-youtube@2.6.1/dist/Youtube.min.js"></script>
+</head>
+<body>
+   <div id="fullscreen-logo" class="fullscreen-logo">
+        <img src="https://res.cloudinary.com/dk8kcwpov/image/upload/v1720256085/Untitled_design_3_lprsug.png" alt="Logo" class="logo-image">
+        <h1 class="header-title"><span class="mero">Whatch YOUR</span> <span class="tube">FEV.</span></h1>       
+    </div>
+
+    <header class="header">
+        <div class="header-logo">
+            <img src="https://res.cloudinary.com/dk8kcwpov/image/upload/v1720256085/Untitled_design_3_lprsug.png" alt="MERO TUBE">
+        </div>
+        <h1 class="header-title"><span class="mero">Whatch YOUR</span> <span class="tube">FEV.</span></h1>
+    </header>
+
+    <div class="side-text" id="side-text">Notification Message</div>
+
+    <div class="button-container">
+        <button id="nepali-channels-btn">Nepali Channels</button>
+        <button id="hindi-channels-btn">Hindi Channels</button>
+        <button id="movies-btn">Movies</button>
+        <button id="series-btn">Series</button>
+    </div>
+    
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for movies or channels...">
+    </div>
+
+    <div class="content">
+        <ul class="channel-list" id="nepali-channel-list"></ul>
+        <ul class="channel-list" id="hindi-channel-list"></ul>
+        <ul class="channel-list" id="movies-list"></ul>
+        <ul class="channel-list" id="series-list"></ul>
+    </div>
+
+    <div class="player-wrapper" id="player-wrapper" style="display:none;">
+        <video id="video-player" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360" autoplay>
+            <!-- Video source will be dynamically added -->
+        </video>
+        <img id="logo-overlay" src="https://res.cloudinary.com/dk8kcwpov/image/upload/v1720256085/Untitled_design_3_lprsug.png" alt="Logo" class="logo-overlay">
+        <button class="back-button" id="back-button">Back to Channel List</button>
+    </div>
+
+    <div class="footer">
+        Made with ♥ by PR chapagain <a class="button" href="https://github.com/prchapagain/merotv"><img src="https://res.cloudinary.com/djcw5veb6/image/upload/v1719727590/about-xxl_ybbg2a.png" alt="footer img"></a>
+    </div>
+
+    <script>
+        // Initialize the Video.js player
+        var player = videojs('my-video');
+    </script>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sideText = document.getElementById('side-text');
+            sideText.innerHTML = "Welcome to MeroTUBE! Please pick your favorite channel and enjoy.";
+            sideText.style.display = 'block'; // Ensure the notification is visible initially
+
+            var fullscreenLogo = document.getElementById('fullscreen-logo');
+            // Hide logo after 3 seconds
+            setTimeout(function() {
+                fullscreenLogo.style.display = 'none';
+            }, 3000);
+
+            // Or hide on click
+            fullscreenLogo.addEventListener('click', function() {
+                fullscreenLogo.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
